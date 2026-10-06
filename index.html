@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Python code</title>
+<meta name="description" content="Privacy policy for Python code, an offline Python editor and terminal for Android.">
+<meta name="theme-color" content="#F2F5FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1424" media="(prefers-color-scheme: dark)">
+<style>
+:root{
+  --paper:#F2F5FA; --ink:#0F1B2D; --mute:#4D5C75; --line:#D3DCEA; --link:#2F5D9E; --sun:#F4C430;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --paper:#0C1424; --ink:#E8EEF9; --mute:#9BA9C4; --line:#223454; --link:#8DB4F0; color-scheme:dark;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1424; --ink:#E8EEF9; --mute:#9BA9C4; --line:#223454; --link:#8DB4F0; color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--font);-webkit-text-size-adjust:100%}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{width:min(720px,100% - 40px);margin-inline:auto}
+header{padding:20px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:800;font-size:20px;letter-spacing:-.01em}
+.brand i{font-style:normal;background:var(--sun);color:#0F1B2D;padding:2px 7px;border-radius:6px;margin-right:6px}
+.mode{background:none;border:2px solid var(--line);color:var(--ink);border-radius:10px;width:40px;height:40px;font-size:18px;line-height:1;cursor:pointer}
+.mode:hover{border-color:var(--link)}
+main{padding:44px 0 64px}
+h1{font-size:clamp(32px,7vw,46px);line-height:1.1;letter-spacing:-.02em;margin:0 0 10px}
+.date{color:var(--mute);margin:0 0 28px}
+.keypoint{background:var(--sun);color:#0F1B2D;border-radius:14px;padding:18px 22px;font-weight:500;margin:0 0 8px}
+h2{font-size:21px;line-height:1.3;margin:34px 0 6px}
+p,ul{margin:0 0 12px}
+li{margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--mute);font-size:15px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="brand"><i>&gt;_</i>Python code</span>
+    <button class="mode" id="mode" type="button" aria-label="Switch between light and dark theme">◐</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="date">Effective date: October 6, 2026. App: Python code (inosuke.code.python).</p>
+
+    <p class="keypoint">Python code does not collect, store on a server, or share your personal data. There are no accounts, no ads and no analytics.</p>
+
+    <h2>What stays on your phone</h2>
+    <p>Your code files, project folders, settings, themes and open tabs are saved only on your device. The app does not upload them anywhere.</p>
+
+    <h2>Permissions we ask for</h2>
+    <ul>
+      <li><strong>Internet.</strong> Used when you install libraries with pip, which downloads packages from the Python Package Index (pypi.org). Programs you write yourself can also use the internet if your code asks for it.</li>
+      <li><strong>Files and storage (all files access).</strong> Used so you can open, edit and save Python files and project folders on your phone, and so scripts can read and write files next to them. The app only works with the files and folders you choose or create. It does not scan or read anything else.</li>
+    </ul>
+
+    <h2>Your own code</h2>
+    <p>Scripts you run have the same access as the app. If your script sends data over the internet, that is done by your code, and you are responsible for it.</p>
+
+    <h2>Third parties</h2>
+    <p>The app has no advertising or analytics tools. When you install or update the app through Google Play, Google handles that under its own <a href="https://policies.google.com/privacy" rel="noopener">Privacy Policy</a>. Packages you install with pip come from pypi.org and the authors of those packages.</p>
+
+    <h2>Children</h2>
+    <p>The app is a coding tool for a general audience. Because it collects no personal data, there is no child data to collect.</p>
+
+    <h2>Deleting your data</h2>
+    <p>Uninstalling the app removes its settings and its private data. Python files saved in shared storage (for example the PythonSSC folder) stay on your phone until you delete them yourself in a file manager.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the new version and a new effective date will be posted on this page.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Message the developer on <a href="https://t.me/mrinosuke89" rel="noopener">Telegram</a> or open an issue on <a href="https://github.com/mrinosuke" rel="noopener">GitHub</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Python code by mrinosuke</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('mode');
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')root.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(mq.matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
